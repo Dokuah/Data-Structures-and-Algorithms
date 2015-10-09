@@ -59,28 +59,51 @@ class SinglyLinkedList {
     public void insertBefore(Node elem1, Object elem2){
 //    	 Insert elem2 before elem1
     	 // inserts the specified element at the specified position in this list
-//        {
-//            Node crunchifyTemp = new Node(data);
-//            Node crunchifyCurrent = head;
-//            // crawl to the requested index or the last element in the list,
-//            // whichever comes first
-//            for (int i = 1; i < index && crunchifyCurrent.getNext() != null; i++) {
-//                crunchifyCurrent = crunchifyCurrent.getNext();
-//            }
-//            // set the new node's next-node reference to this node's next-node
-//            // reference
-//            crunchifyTemp.setNext(crunchifyCurrent.getNext());
-//            // now set this node's next-node reference to the new node
-//            crunchifyCurrent.setNext(crunchifyTemp);
-//            listCount++;// incremesnt the number of elements variable
+        {
+            Node crunchifyTemp = new Node(elem2);
+            Node crunchifyCurrent = head;
+            // crawl to the requested index or the last element in the list,
+            // whichever comes first
+            for (int i = 1; i < listCount && crunchifyCurrent.getNext() != null; i++) {
+                crunchifyCurrent = crunchifyCurrent.getNext();
+            }
+            // set the new node's next-node reference to this node's next-node
+            // reference
+            crunchifyTemp.setNext(crunchifyCurrent.getNext());
+            // now set this node's next-node reference to the new node
+            crunchifyCurrent.setNext(crunchifyTemp);
+            listCount++; // increments the number of elements variable
+    }
     }
     
     public void insertAfter(Node data1, Object data2){
 //    	 Insert elem2 after elem1.	
+    	
+    	// inserts the specified element at the specified position in this list
+        {
+            Node crunchifyTemp = new Node(data2);
+            Node crunchifyCurrent = head;
+            // crawl to the requested index or the last element in the list,
+            // whichever comes first
+            for (int i = 1; i < listCount && crunchifyCurrent.getNext() != null; i++) {
+                crunchifyCurrent = crunchifyCurrent.getNext();
+            }
+            // set the new node's next-node reference to this node's next-node
+            // reference
+            crunchifyTemp.setNext(crunchifyCurrent.getNext());
+            // now set this node's next-node reference to the new node
+            crunchifyCurrent.setNext(crunchifyTemp);
+            listCount++; // increments the number of elements variable
+    }
     }
 
     public boolean isEmpty(){
+    	if(listCount == 0) {
     	return true;
+    	}
+    	else{
+    		return false;
+    	}
     } 
     public void reverse(){
     	
